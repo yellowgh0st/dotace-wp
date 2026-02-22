@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme Header
+ * Header
  *
  * @package DotaceApp
  */
@@ -23,33 +23,17 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
 
-    <header class="flex w-full justify-center">
-        <div class="container flex min-h-16 items-center bg-red-500">
-
-            <!-- Logo / Site Title -->
-            <div id="branding" class="w-1/2">
-                <?php if (has_custom_logo()): ?>
-                    <?php the_custom_logo(); ?>
-                <?php else: ?>
-                    <a href="<?php echo esc_url(home_url('/')); ?>" class="site-title">
-                        <?php bloginfo('name'); ?>
-                    </a>
-                <?php endif; ?>
-            </div>
-
-            <nav class="flex w-1/2 justify-end">
-                <?php
-                wp_nav_menu([
-                    'theme_location' => 'primary',
-                    'menu_class' => 'flex space-x-4', // Tailwind classes
-                    'container' => false,
-                    'fallback_cb' => false,
-                    'depth' => 1,
-                    'link_before' => '',
-                    'link_after' => '',
-                ]);
-                ?>
-            </nav>
-
+    <header class="
+    flex
+    mx-auto
+    items-center
+    bg-[#FEFFFE]
+    border-b
+    border-gray-200
+    min-h-17
+    ">
+        <div class="flex container mx-auto">
+            <?php get_template_part('components/branding'); ?>
+            <?php get_template_part('components/nav'); ?>
         </div>
     </header>

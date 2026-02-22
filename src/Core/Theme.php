@@ -7,5 +7,7 @@ class Theme
     {
         Setup::init();
         Assets::init();
+        Filters::init();
     }
+
 }
