@@ -52,13 +52,13 @@
             </button>
         </div>
 
-        <div class="flex w-full justify-start flex-col pl-[16%]">
-            <div class="relative rounded-2xl overflow-hidden shadow-2xl max-w-146">
+        <div class="flex sm:pl-0 lg:pl-12 w-full flex-col">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img src="https://images.unsplash.com/flagged/photo-1566838634584-c541648798ab?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2xhciUyMHBhbmVscyUyMHJvb2YlMjBob21lfGVufDF8fHx8MTc3MTcwMDk5NHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080&amp;utm_source=figma&amp;utm_medium=referral"
                     alt="Solar panels on modern home" class="w-full h-full object-cover aspect-4/3">
             </div>
 
-            <div class="relative max-w-146">
+            <div class="relative">
                 <div class="absolute bottom-6 left-6 right-6 bg-white rounded-xl p-6 shadow-xl">
                     <div class="grid grid-cols-3 gap-4">
                         <div>
