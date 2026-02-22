@@ -70,7 +70,7 @@
                             <div class="text-sm text-gray-600">spokojenost zákazníků</div>
                         </div>
                         <div>
-                            <div class="text-2xl text-green-600">25+</div>
+                            <div class="text-2xl text-green-600">25+ let</div>
                             <div class="text-sm text-gray-600">zkušeností v oboru</div>
                         </div>
                     </div>

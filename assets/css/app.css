@@ -1,1 +1,5 @@
 @import "tailwindcss" source("../../");
+
+@theme {
+    --breakpoint-2xl: 85rem;
+}
