@@ -3,8 +3,8 @@
 ## Install
 1. Copy theme into `/wp-content/themes/`
 2. Run:
-   composer install
-   yarn install
+   - composer install
+   - yarn install
 4. Activate theme in WP Admin.
 
 ## Dev Philosophy
