@@ -4,7 +4,8 @@
 1. Copy theme into `/wp-content/themes/`
 2. Run:
    composer install
-3. Activate theme in WP Admin.
+   yarn install
+4. Activate theme in WP Admin.
 
 ## Dev Philosophy
 - PSR-4 Autoloaded PHP
