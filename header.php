@@ -25,12 +25,15 @@
 
     <header class="
     flex
+    w-full
     mx-auto
     items-center
     bg-[#FEFFFE]
     border-b
     border-gray-200
     min-h-17
+    fixed
+    z-1
     ">
         <div class="flex container mx-auto">
             <?php get_template_part('components/branding'); ?>

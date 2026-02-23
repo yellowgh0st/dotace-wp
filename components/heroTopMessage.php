@@ -6,7 +6,7 @@ $heroMessages = PostsController::getByCategory('hero-message', 10);
 ?>
 
 <?php if (!empty($posts)): ?>
-    <div id="heroTopMessage" class="pt-9 bg-[#F3FDF6]">
+    <div id="heroTopMessage" class="pt-25 bg-[#F3FDF6]">
         <div class="flex container mx-auto gap-7 items-center">
             <?php foreach ($heroMessages as $post): ?>
                 <div class="inline-block
