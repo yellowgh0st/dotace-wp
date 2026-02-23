@@ -1,18 +1,23 @@
 <?php
 namespace App\Models;
 
-class Post
+class PostModel
 {
     protected int $id;
     protected \WP_Post $data;
 
-    public function __construct(int $id)
+    public function __construct(int|\WP_Post $post)
     {
-        $this->id = $id;
-        $this->data = get_post($id);
+        if ($post instanceof \WP_Post) {
+            $this->data = $post;
+            $this->id = $post->ID;
+        } else {
+            $this->data = get_post($post);
+            $this->id = $post;
+        }
 
         if (!$this->data) {
-            throw new \Exception("Post with ID {$id} not found.");
+            throw new \Exception("Post not found.");
         }
     }
 
@@ -62,6 +67,12 @@ class Post
         return get_post_meta($this->id, $key, $single);
     }
 
+    public function hasContent(): bool
+    {
+        $content = apply_filters('the_content', $this->data->post_content ?? '');
+        return !empty(trim(wp_strip_all_tags($content)));
+    }
+
     /** Static helpers **/
 
     /**
@@ -70,7 +81,7 @@ class Post
      * @param string $post_type
      * @return Post[]
      */
-    public static function all(int $count = 10, string $post_type = 'post'): array
+    public static function getAllPosts(int $count = 10, string $post_type = 'post'): array
     {
         $query = new \WP_Query([
             'posts_per_page' => $count,
@@ -89,17 +100,19 @@ class Post
     /**
      * Get posts by category slug
      */
-    public static function byCategory(string $slug, int $count = 10): array
+    public static function getPostsByCategory(string $slug, int $limit = 10): array
     {
         $query = new \WP_Query([
+            'post_type' => 'post',
+            'posts_per_page' => $limit,
             'category_name' => $slug,
-            'posts_per_page' => $count,
             'post_status' => 'publish',
         ]);
 
         $posts = [];
-        foreach ($query->posts as $p) {
-            $posts[] = new self($p->ID);
+
+        foreach ($query->posts as $wpPost) {
+            $posts[] = new self($wpPost); // pass object, no extra query
         }
 
         return $posts;
