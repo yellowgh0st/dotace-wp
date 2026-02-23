@@ -1,19 +1,29 @@
+<?php
+
+use App\Controllers\PostsController;
+$heroTitlePosts = PostsController::getByCategory('hero-title', 1);
+
+?>
+
 <?php get_template_part('components/heroTopMessage'); ?>
 
 <section id="hero" class="flex pt-8 pb-11 bg-[#F3FDF6] min-h-96 flex-col lg:flex-row">
     <div class="flex container flex-col lg:flex-row mx-auto">
         <div class="w-full">
-            <h1 class="text-5xl
+            <?php foreach ($heroTitlePosts as $post): ?>
+                <h1 class="text-5xl
         lg:text-6xl
         text-gray-900
         leading-tight
         mbe-6
-        ">Napájejte svůj domov čistou energií</h1>
-            <p class="text-xl
+        "><?php echo $post->title(); ?></h1>
+                <p class="text-xl
         text-gray-600
         leading-relaxed
-        mbe-6">Proměňte svůj domov pomocí solárních panelů, tepelných čerpadel a chytrých energetických řešení.
-                Ušetřete peníze a zároveň chraňte životní prostředí.</p>
+        mbe-6">
+                    <?php echo trim(strip_tags($post->content())); ?>
+                </p>
+            <?php endforeach; ?>
 
             <div class="space-y-3 mbe-6">
                 <div class="flex items-center gap-3">

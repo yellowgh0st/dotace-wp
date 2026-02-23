@@ -1,14 +1,14 @@
 <?php
 
 use App\Controllers\PostsController;
-$posts = PostsController::getByCategory('hero-message', 10);
+$heroMessages = PostsController::getByCategory('hero-message', 10);
 
 ?>
 
 <?php if (!empty($posts)): ?>
     <div id="heroTopMessage" class="pt-9 bg-[#F3FDF6]">
         <div class="flex container mx-auto gap-7 items-center">
-            <?php foreach ($posts as $post): ?>
+            <?php foreach ($heroMessages as $post): ?>
                 <div class="inline-block
                 px-4
                 py-2

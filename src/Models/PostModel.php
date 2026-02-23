@@ -94,6 +94,8 @@ class PostModel
             $posts[] = new self($p->ID);
         }
 
+        wp_reset_postdata();
+
         return $posts;
     }
 
@@ -114,6 +116,8 @@ class PostModel
         foreach ($query->posts as $wpPost) {
             $posts[] = new self($wpPost); // pass object, no extra query
         }
+
+        wp_reset_postdata();
 
         return $posts;
     }
