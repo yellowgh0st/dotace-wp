@@ -73,6 +73,21 @@ class PostModel
         return !empty(trim(wp_strip_all_tags($content)));
     }
 
+    /** ACF field **/
+    public function getAcfField(string $key)
+    {
+        if (!function_exists('get_field')) {
+            return null; // ACF not active safeguard
+        }
+
+        return get_field($key, $this->id);
+    }
+
+    public function color(): ?string
+    {
+        return $this->getAcfField('color');
+    }
+
     /** Static helpers **/
 
     /**
@@ -121,4 +136,5 @@ class PostModel
 
         return $posts;
     }
+
 }
