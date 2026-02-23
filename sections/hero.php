@@ -16,12 +16,12 @@ $heroTitlePosts = PostsController::getByCategory('hero-title', 1);
         text-gray-900
         leading-tight
         mbe-6
-        "><?php echo $post->title(); ?></h1>
+        "><?= $post->title(); ?></h1>
                 <p class="text-xl
         text-gray-600
         leading-relaxed
         mbe-6">
-                    <?php echo trim(strip_tags($post->content())); ?>
+                    <?= trim(strip_tags($post->content())); ?>
                 </p>
             <?php endforeach; ?>
 
