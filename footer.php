@@ -4,10 +4,13 @@
  *
  * @package DotaceApp
  */
+
+use App\Models\SettingsModel;
+
 ?>
 
 <footer class="flex w-full min-h-95 bg-[#101828]">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="container mx-auto py-12">
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             <div>
                 <div class="flex items-center gap-2 mb-4">
@@ -19,10 +22,11 @@
                         <?php bloginfo('name'); ?>
                     </a>
                 </div>
-                <p class="text-gray-400 mb-4">Přední poskytovatel řešení obnovitelné energie pro domácnosti po celé
-                    Evropě.</p>
+                <p class="text-gray-400 mb-4">
+                    <?php bloginfo('description'); ?>
+                </p>
                 <div class="flex gap-3">
-                    <a href="#"
+                    <a href="<?= esc_url(SettingsModel::facebook()); ?>"
                         class="w-10 h-10 bg-white rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -30,7 +34,7 @@
                             <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                         </svg>
                     </a>
-                    <a href="#"
+                    <a href="<?= esc_url(SettingsModel::xcom()); ?>"
                         class="w-10 h-10 bg-white rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -40,7 +44,7 @@
                             </path>
                         </svg>
                     </a>
-                    <a href="#"
+                    <a href="<?= esc_url(SettingsModel::instagram()); ?>"
                         class="w-10 h-10 bg-white rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -50,7 +54,7 @@
                             <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
                         </svg>
                     </a>
-                    <a href="#"
+                    <a href="<?= esc_url(SettingsModel::linkedin()); ?>"
                         class="w-10 h-10 bg-white rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors"
                         data-fg-bb4420="1.17:1.5409:/src/app/components/Footer.tsx:29:15:1553:195:e:a:e"><svg
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -66,28 +70,19 @@
             </div>
             <div>
                 <h3 class="text-white text-lg mb-4">Rychlé odkazy</h3>
-                <ul class="space-y-2">
-                    <li><a href="#solutions" class="text-gray-400 hover:text-green-500 transition-colors">Naše
-                            řešení</a></li>
-                    <li><a href="#benefits" class="text-gray-400 hover:text-green-500 transition-colors">Výhody</a>
-                    </li>
-                    <li><a href="#about" class="text-gray-400 hover:text-green-500 transition-colors">O nás</a></li>
-                    <li><a href="#contact" class="text-gray-400 hover:text-green-500 transition-colors">Kontakt</a>
-                    </li>
-                </ul>
+                <?php wp_nav_menu([
+                    'theme_location' => 'footer_quick_links',
+                    'container' => false,
+                    'menu_class' => 'space-y-2 text-gray-400',
+                ]); ?>
             </div>
             <div>
                 <h3 class="text-white text-lg mb-4">Služby</h3>
-                <ul class="space-y-2">
-                    <li><a href="#" class="text-gray-400 hover:text-green-500 transition-colors">Solar Panel
-                            Instalace solárních panelů</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-green-500 transition-colors">Heat
-                            Tepelná čerpadla</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-green-500 transition-colors">Smart
-                            Integrace chytré domácnosti</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-green-500 transition-colors">Battery
-                            Bateriová úložiště</a></li>
-                </ul>
+                <?php wp_nav_menu([
+                    'theme_location' => 'services',
+                    'container' => false,
+                    'menu_class' => 'space-y-2 text-gray-400',
+                ]); ?>
             </div>
             <div>
                 <h3 class="text-white text-lg mb-4">Newsletter</h3>

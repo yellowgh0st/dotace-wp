@@ -15,6 +15,8 @@ class Setup
 
         register_nav_menus([
             'primary' => __('Primary Menu', 'dotace-app'),
+            'footer_quick_links' => __('Footer Quick Links', 'dotace-app'),
+            'services' => __('Services', 'dotace-app'),
         ]);
     }
 }

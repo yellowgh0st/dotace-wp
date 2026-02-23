@@ -9,7 +9,7 @@ $heroTitlePosts = PostsController::getByCategory('hero-title', 1);
 
 <section id="hero" class="flex pt-8 pb-11 bg-[#F3FDF6] min-h-96 flex-col lg:flex-row">
     <div class="flex container flex-col lg:flex-row mx-auto">
-        <div class="w-full">
+        <div class="w-full max-lg:mb-16 lg:mb-0">
             <?php foreach ($heroTitlePosts as $post): ?>
                 <h1 class="text-5xl
         lg:text-6xl
