@@ -7,7 +7,7 @@ $contactTitlePosts = PostsController::getByCategory('contact-title', 1);
 
 ?>
 
-<section id="contact" class="flex py-20 min-h-96 flex-col lg:flex-row bg-linear-to-b from-gray-50 to-white">
+<section id="contact" class="flex py-20 min-h-96 flex-col lg:flex-row bg-white">
     <div class="container mx-auto">
         <div class="grid lg:grid-cols-2 gap-12">
             <div id="contactForm" class="min-h-[790px] scroll-mt-27">
