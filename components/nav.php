@@ -17,5 +17,5 @@
         rounded-lg
         hover:bg-green-700
         transition-colors
-        cursor-pointer">Konzultace</button>
+        cursor-pointer" onclick="window.location.href='#contactForm';">Konzultace</button>
 </nav>

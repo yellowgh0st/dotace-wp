@@ -88,6 +88,11 @@ class PostModel
         return $this->getAcfField('color');
     }
 
+    public function icon(): ?string
+    {
+        return $this->getAcfField('icon');
+    }
+
     private const ALLOWED_COLORS = [
         'red' => 'bg-red-100',
         'orange' => 'bg-orange-100',

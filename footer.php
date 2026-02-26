@@ -104,7 +104,7 @@ use App\Models\SettingsModel;
         </div>
         <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p class="text-gray-400 text-sm">&copy;
-                <?php echo date('Y'); ?>
+                <?= date('Y'); ?>
                 <?php bloginfo('name'); ?>. Všechna práva vyhrazena.
             </p>
             <div class="flex gap-6 text-sm">

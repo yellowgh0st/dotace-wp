@@ -1,14 +1,16 @@
 <?php
 
 use App\Controllers\PostsController;
+use App\Models\SettingsModel;
+
 $contactTitlePosts = PostsController::getByCategory('contact-title', 1);
 
 ?>
 
-<section id="contact" class="flex py-11 min-h-96 flex-col lg:flex-row bg-linear-to-b from-gray-50 to-white">
+<section id="contact" class="flex py-20 min-h-96 flex-col lg:flex-row bg-linear-to-b from-gray-50 to-white">
     <div class="container mx-auto">
         <div class="grid lg:grid-cols-2 gap-12">
-            <div>
+            <div id="contactForm" class="min-h-[790px] scroll-mt-27">
                 <?php foreach ($contactTitlePosts as $post): ?>
                     <h2 class="text-4xl text-gray-900 mb-4">
                         <?= $post->title(); ?>
@@ -17,52 +19,7 @@ $contactTitlePosts = PostsController::getByCategory('contact-title', 1);
                         <?= trim(strip_tags($post->content())); ?>
                     </p>
                 <?php endforeach; ?>
-                <form class="space-y-6">
-                    <div class="grid sm:grid-cols-2 gap-6">
-                        <div><label for="firstName" class="block text-sm text-gray-700 mb-2">First
-                                Name</label><input type="text" id="firstName"
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green-600 focus:ring-2 focus:ring-green-200 outline-none transition-all"
-                                placeholder="John">
-                        </div>
-                        <div>
-                            <label for="lastName" class="block text-sm text-gray-700 mb-2">Last
-                                Name</label><input type="text" id="lastName"
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green-600 focus:ring-2 focus:ring-green-200 outline-none transition-all"
-                                placeholder="Doe">
-                        </div>
-                    </div>
-                    <div><label for="email" class="block text-sm text-gray-700 mb-2">Email
-                            Address</label><input type="email" id="email"
-                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green-600 focus:ring-2 focus:ring-green-200 outline-none transition-all"
-                            placeholder="john@example.com"></div>
-                    <div><label for="phone" class="block text-sm text-gray-700 mb-2">Phone
-                            Number</label><input type="tel" id="phone"
-                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green-600 focus:ring-2 focus:ring-green-200 outline-none transition-all"
-                            placeholder="+1 (555) 000-0000"></div>
-                    <div><label for="service" class="block text-sm text-gray-700 mb-2">Service
-                            Interest</label><select id="service"
-                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green-600 focus:ring-2 focus:ring-green-200 outline-none transition-all">
-                            <option value="">
-                                Select a service</option>
-                            <option value="solar">
-                                Solar Panels</option>
-                            <option value="heatpump">
-                                Heat Pumps</option>
-                            <option value="smart">
-                                Smart Home</option>
-                            <option value="battery">
-                                Battery Storage</option>
-                            <option value="all">
-                                Complete Solution</option>
-                        </select></div>
-                    <div><label for="message" class="block text-sm text-gray-700 mb-2">Message</label><textarea
-                            id="message" rows="4"
-                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green-600 focus:ring-2 focus:ring-green-200 outline-none transition-all resize-none"
-                            placeholder="Tell us about your project..."></textarea>
-                    </div><button type="submit"
-                        class="w-full bg-green-600 text-white px-8 py-4 rounded-lg hover:bg-green-700 transition-colors">Send
-                        Message</button>
-                </form>
+                <?= do_shortcode('[forminator_form id="67"]'); ?>
             </div>
             <div class="lg:pl-12">
                 <h3 class="text-2xl text-gray-900 mb-8">Kontaktní informace</h3>
@@ -79,11 +36,10 @@ $contactTitlePosts = PostsController::getByCategory('contact-title', 1);
                         </div>
                         <div>
                             <div class="text-sm text-gray-500 mb-1">
-                                Phone</div>
-                            <div class="text-gray-900">+1
-                                (555) 123-4567</div>
-                            <div class="text-gray-900">+1
-                                (555) 765-4321</div>
+                                Telefon</div>
+                            <div class="text-gray-900">
+                                <?= SettingsModel::phone(); ?>
+                            </div>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
@@ -99,9 +55,8 @@ $contactTitlePosts = PostsController::getByCategory('contact-title', 1);
                             <div class="text-sm text-gray-500 mb-1">
                                 Email</div>
                             <div class="text-gray-900">
-                                info@ecoenergy.com</div>
-                            <div class="text-gray-900">
-                                support@ecoenergy.com</div>
+                                <?= SettingsModel::email(); ?>
+                            </div>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
@@ -117,11 +72,10 @@ $contactTitlePosts = PostsController::getByCategory('contact-title', 1);
                         </div>
                         <div>
                             <div class="text-sm text-gray-500 mb-1">
-                                Address</div>
-                            <div class="text-gray-900">123
-                                Green Energy Street</div>
+                                Adresa</div>
                             <div class="text-gray-900">
-                                Prague, 100 00</div>
+                                <?= SettingsModel::address(); ?>
+                            </div>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
@@ -135,11 +89,10 @@ $contactTitlePosts = PostsController::getByCategory('contact-title', 1);
                         </div>
                         <div>
                             <div class="text-sm text-gray-500 mb-1">
-                                Business Hours</div>
-                            <div class="text-gray-900">Mon
-                                - Fri: 8:00 - 18:00</div>
-                            <div class="text-gray-900">Sat:
-                                9:00 - 15:00</div>
+                                Hodiny</div>
+                            <div class="text-gray-900">
+                                <?= SettingsModel::hours(); ?>
+                            </div>
                         </div>
                     </div>
                 </div>

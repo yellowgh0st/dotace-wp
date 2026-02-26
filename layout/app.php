@@ -13,6 +13,8 @@
     ?>
 </main>
 
+<?php get_template_part('sections/solutions'); ?>
+
 <?php get_template_part('sections/contact'); ?>
 
 <?php get_footer(); ?>

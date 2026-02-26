@@ -55,4 +55,24 @@ class SettingsModel
     {
         return self::getAcfField('linkedin-url');
     }
+
+    public static function phone(): ?string
+    {
+        return self::getAcfField('phone');
+    }
+
+    public static function email(): ?string
+    {
+        return self::getAcfField('email');
+    }
+
+    public static function address(): ?string
+    {
+        return self::getAcfField('address');
+    }
+
+    public static function hours(): ?string
+    {
+        return self::getAcfField('hours');
+    }
 }

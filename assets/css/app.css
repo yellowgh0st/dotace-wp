@@ -3,3 +3,63 @@
 @theme {
     --breakpoint-2xl: 85rem;
 }
+
+@layer components {
+
+    /* === Form wrapper spacing === */
+    .forminator-ui {
+        @apply space-y-6;
+    }
+
+    /* === Labels === */
+    .forminator-ui label {
+        @apply block text-sm text-gray-700 mb-2;
+    }
+
+    /* === Inputs === */
+    .forminator-ui input[type="text"],
+    .forminator-ui input[type="email"],
+    .forminator-ui input[type="tel"],
+    .forminator-ui input[type="number"],
+    .forminator-ui input[type="password"],
+    .forminator-ui select,
+    .forminator-ui textarea {
+
+        @apply w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green-600 focus:ring-2 focus:ring-green-200 outline-none transition-all bg-white;
+    }
+
+    /* Remove default Forminator shadows */
+    .forminator-ui input,
+    .forminator-ui select,
+    .forminator-ui textarea {
+        @apply shadow-none;
+    }
+
+    /* Textarea specific */
+    .forminator-ui textarea {
+        @apply resize-none;
+    }
+
+    /* === Grid for two-column fields === */
+    .forminator-ui .forminator-row {
+        @apply grid sm:grid-cols-2 gap-6;
+    }
+
+    /* === Submit Button === */
+    .forminator-ui .forminator-button-submit {
+        @apply w-full bg-green-600 text-white px-8 py-4 rounded-lg hover:bg-green-700 transition-colors;
+    }
+
+    /* Remove default button styling */
+    .forminator-ui button {
+        @apply border-0 shadow-none cursor-pointer;
+    }
+
+    .forminator-error-message {
+        @apply rounded-sm text-red-600;
+    }
+
+    .forminator-response-message {
+        @apply rounded-sm;
+    }
+}

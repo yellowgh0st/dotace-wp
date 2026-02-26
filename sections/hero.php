@@ -1,6 +1,7 @@
 <?php
 
 use App\Controllers\PostsController;
+
 $heroTitlePosts = PostsController::getByCategory('hero-title', 1);
 
 ?>
@@ -52,7 +53,7 @@ $heroTitlePosts = PostsController::getByCategory('hero-title', 1);
         items-center
         justify-center
         gap-2 group
-        cursor-pointer">Získat bezplatnou konzultaci
+        cursor-pointer" onclick="window.location.href='#contactForm';">Získat bezplatnou konzultaci
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-arrow-right w-5 h-5 group-hover:translate-x-1 transition-transform">
