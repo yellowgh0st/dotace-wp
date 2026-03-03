@@ -18,7 +18,7 @@ use App\Models\SettingsModel;
                         class="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
                         <span class="text-white text-xl">⚡</span>
                     </div>
-                    <a href="<?php echo esc_url(home_url('/')); ?>" class="text-white text-xl font-semibold">
+                    <a href="<?= esc_url(home_url('/')); ?>" class="text-white text-xl font-semibold">
                         <?php bloginfo('name'); ?>
                     </a>
                 </div>
