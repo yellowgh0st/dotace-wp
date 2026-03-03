@@ -16,7 +16,8 @@ $bannerPosts = PostsController::getByCategory('banner', 1);
         </p>
     <?php endforeach; ?>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <button class="bg-white text-green-600 px-8 py-4 rounded-lg hover:bg-gray-50 transition-colors">
+        <button class="bg-white text-green-600 px-8 py-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer"
+            onclick="window.location.href='#contactForm';">
             Naplánovat bezplatnou konzultaci
         </button>
     </div>
