@@ -29,16 +29,21 @@ $heroTitlePosts = PostsController::getByCategory('hero-title', 1);
             <div class="space-y-3 mbe-6">
                 <div class="flex items-center gap-3">
                     <?php get_template_part('components/tickIcon'); ?>
-                    <span class="text-gray-700">Až o <b>70 % nižší náklady na energii</b></span>
+                    <span class="text-gray-700">Získání dotace <b>Nová zelená úsporám</b></span>
                 </div>
                 <div class="flex items-center gap-3">
                     <?php get_template_part('components/tickIcon'); ?>
-                    <span class="text-gray-700">Profesionální instalace a odborná podpora</span>
+                    <span class="text-gray-700">Kompletní realizace rekonstrukce</span>
                 </div>
 
                 <div class="flex items-center gap-3">
                     <?php get_template_part('components/tickIcon'); ?>
-                    <span class="text-gray-700">Možnost využití <b>státních dotací a financování</b></span>
+                    <span class="text-gray-700">Snížení nákladů na energie až <b>o desítky procent</b></span>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <?php get_template_part('components/tickIcon'); ?>
+                    <span class="text-gray-700">Odborné poradenství <b>zcela zdarma</b></span>
                 </div>
             </div>
 
